@@ -1,0 +1,45 @@
+Nessa pasta (Todos_Os_Programas-IFRN) estarão as resoluções 
+dos exercício de todas as listas de programação da matéria
+de C++ do IFRN. No entanto, para fins de melhorias de habilidades
+implementarei em C.
+
+//* ESTUDOS ANALISADOS E DIFERENÇAS ENTRE O C E O C++
+
+Primeiro, ao fazer a questão 3 da primeira lista, notei uma diferença no uso das Strings 
+em C. Elas se comportam como ponteiros ou arrays. Em C, uma String é uma sequencia de char
+em posições de memória contínuas, terminada por um caractere nulo (\0).
+
+- Quando declaramos char minha_string[] = "texto"; ou char *ptr_string = "texto";
+a variável minha_string (ou ptr_string) representa ou armazena o endereço de memória
+do primeiro caractere.
+
+O nome de um array (como minha_string) decai para um ponteiro para seu primeiro elemento
+que é o endereço de memória.
+
+- O que podemos fazer:
+
+Evitar a exibição Explicita: podemos escrever nosso código de forma que ele não imprima 
+o endereço de memória. Funções como printf com o especificador %s (para string) usam o endereço fornecido
+para encontrar o primeiro caractere e imprimem todos os caracteres subsequentes até encontrarem
+o terminador \0, sem exibir o endereço em si.
+
+Exemplo prático:
+
+#include <stdio.h>
+
+int main(){
+
+    char nome[] = "Cassio";
+
+    // Acesso normal, que não mostra o endereço
+    printf("A string é: %s\n", nome);
+
+    //Acesso EXPLICITO ao endereço (O que você quer 'ocultar')
+    printf("O endereço de memória do início da string é: %p\n", (void *)nome);
+
+    return 0;
+}
+
+//* Por que usamos por exemplo "%.2f" e não apenas "%f"?
+    Usando a primeira opção para imprimir, aparecerá no console o número float com 2 casas decimais
+    após o ponto e não a forma padrão com 6 (segunda opção)
