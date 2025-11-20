@@ -43,3 +43,13 @@ int main(){
 //* Por que usamos por exemplo "%.2f" e não apenas "%f"?
     Usando a primeira opção para imprimir, aparecerá no console o número float com 2 casas decimais
     após o ponto e não a forma padrão com 6 (segunda opção)
+
+------------------------------------------------****
+//  COMO ARMAZENAR STRINGS em ARRAYS EM C?
+
+Declaramos como uma Matriz. EXEMPLO:
+
+char[7][50];
+
+EM que [7] é o total de "strings" e [50] é a "parte da matriz" que armazenará a quantidade total de 
+char.
