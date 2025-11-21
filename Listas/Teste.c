@@ -1,25 +1,27 @@
 #include <stdio.h>
 #include <windows.h>
 
+/*QUESTÃO 02 ------------------------------------*/
+void conversaro(int hora, int min, int seg){
+    printf("\nO valor convertido em segundo é %i",((hora*60*60) + (min*60) + seg));
+}
+//------------------------------------------------
+
 int main() {
 
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
 
 
-    double v_sensores[10];
+    /*2. Escreva um programa que contenha uma função que receba três valores de entrada referentes 
+    a hora, minuto e segundo. Em seguida o seu programa deverá exibir o valor convertido para 
+    segundos, sabendo que uma hora tem 60 minutos e que um minuto tem 60 segundos.*/
+    int hora, minuto, segundo;
+    printf("\nDigite quantas horas são no formato: Horas, minutos e segundos para comvertemos quantos segundos ");
+    printf("isso dá: ");
+    scanf("%d %d %d", &hora, &minuto,&segundo);
 
-    printf("\nDigite 10 entradas de sensores para verificação: \n");
-    for(int i = 0; i < 10; i++){
-        scanf("%lf", &v_sensores[i]);
-    }
-
-    for(int i = 0; i < 10; i++){
-
-        if(v_sensores[i] < 0 && v_sensores[i] > 100){
-            printf("Leitura anômala detectada na posição %0.lf: %0.2lf", i,  v_sensores[i]);
-        }
-    }
+   conversaro(hora, minuto, segundo);
 
     return 0;
 }
