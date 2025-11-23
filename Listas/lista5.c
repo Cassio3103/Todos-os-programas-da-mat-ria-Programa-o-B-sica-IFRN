@@ -23,7 +23,58 @@ void conversaro(int hora, int min, int seg){
 }
 //------------------------------------------------
 /*QUESTÃO 03 ------------------------------------*/
+void maiorNumeroEh(int x, int y){
+    if(x > y)
+        printf("\nO maior número é %d", x);
+    else if(x < y)
+        printf("\nO maior número é %d", y);
+    else 
+        printf("\nOs números são iguais!");
+}
+//------------------------------------------------
+/*QUESTÃO 04 ------------------------------------*/
+void operacao(int x, int y, char o){
+    switch (o)
+    {
+    case '+':
+        printf("\nA soma é: %d", (x + y));
+        break;
+    case '-':
+        printf("\nA subtração é: %d", (x - y));
+        break;
+    case '*':
+        printf("\nA multiplicação é: %d", (x * y));
+        break;
+    case '/':
+        if(y == 0){
+            printf("\nERRO! Não é possível realizar divisão por 0!");
+        } else {
+        printf("\nA divisão é: %d", (x / y));
+        }
+        break;
+    default:
+        printf("\nDigite uma das operações válidas!");
+        break;
+    }
+}
+//------------------------------------------------
+/*QUESTÃO 05 ------------------------------------*/
+int somatorio(int x){
+    if(x < 0){
+        printf("\nERRO! Valor negativo não possui somatório.\n");
+        return 0;
+    }
 
+    if(x == 0){
+        return 0;
+    }
+
+    int soma = 0;
+    for(int i = 0; i <= x; i++){
+        soma += i;
+    }
+    return soma;
+}
 //------------------------------------------------
 int main(){
 
@@ -55,7 +106,47 @@ int main(){
 
    printf("\n------ FIM DA QUESTÃO 02 ------\n");
 
-   
+   /*3. Escreva um programa com uma função que receba dois números inteiros como entrada e 
+    imprime na tela qual deles é o maior. */
+
+    int n1, n2;
+
+    printf("Digite dois números inteiros: \n");
+    printf("Número 1: \n");
+    scanf("%d", &n1);
+    printf("\nNúmero 2: ");
+    scanf("%d", &n2);
+
+    maiorNumeroEh(n1, n2);
+
+    printf("\n------ FIM DA QUESTÃO 03 ------\n");
+
+    /*4. Escreva um programa com uma função que receba dois valores numéricos e um símbolo 
+    matemático (“+”, “-”, “*” ou “/”). O símbolo determinará qual operação aritmética deverá ser 
+    realizada entres os valores numéricos. Caso o símbolo fornecido para a função não seja um 
+    dos 4 símbolos aritméticos, a função deverá exibir uma mensagem de erro.  */
+
+    int num1, num2;
+    char o;
+    printf("\nDigite dois números: ");
+    scanf("%d %d", &num1, &num2);
+
+    printf("Digite '+', '-', '*' ou '/' para fazermos uma operação: ");
+    scanf(" %c", &o);
+
+    operacao(num1, num2, o);
+
+    /*5. Escreva um programa com uma função que recebe como parâmetro de entrada um valor inteiro 
+    e retorne como resultado o somatório de todos os números anteriores a este número até ZERO. 
+    Caso seja digitado um valor negativo, a função deverá exibir uma mensagem de ERRO e 
+    retorna o valor ZERO.  */
+
+    int numero;
+
+    printf("\nDigite um número: ");
+    scanf("%d", &numero);
+
+    printf("\nO somatório dos n números antes desse é: %d", somatorio(numero));
 
     return 0;
 }

@@ -1,9 +1,22 @@
 #include <stdio.h>
 #include <windows.h>
 
-/*QUESTÃO 02 ------------------------------------*/
-void conversaro(int hora, int min, int seg){
-    printf("\nO valor convertido em segundo é %i",((hora*60*60) + (min*60) + seg));
+/*QUESTÃO  ------------------------------------*/
+int somatorio(int x){
+    if(x < 0){
+        printf("\nERRO! Valor negativo não possui somatório.\n");
+        return 0;
+    }
+
+    if(x == 0){
+        return 0;
+    }
+
+    int soma = 0;
+    for(int i = 0; i <= x; i++){
+        soma += i;
+    }
+    return soma;
 }
 //------------------------------------------------
 
@@ -13,16 +26,18 @@ int main() {
     SetConsoleCP(CP_UTF8);
 
 
-    /*2. Escreva um programa que contenha uma função que receba três valores de entrada referentes 
-    a hora, minuto e segundo. Em seguida o seu programa deverá exibir o valor convertido para 
-    segundos, sabendo que uma hora tem 60 minutos e que um minuto tem 60 segundos.*/
-    int hora, minuto, segundo;
-    printf("\nDigite quantas horas são no formato: Horas, minutos e segundos para comvertemos quantos segundos ");
-    printf("isso dá: ");
-    scanf("%d %d %d", &hora, &minuto,&segundo);
+    /*5. Escreva um programa com uma função que recebe como parâmetro de entrada um valor inteiro 
+    e retorne como resultado o somatório de todos os números anteriores a este número até ZERO. 
+    Caso seja digitado um valor negativo, a função deverá exibir uma mensagem de ERRO e 
+    retorna o valor ZERO.  */
 
-   conversaro(hora, minuto, segundo);
+    int numero;
 
+    printf("\nDigite um número: ");
+    scanf("%d", &numero);
+
+    printf("\nO somatório dos n números antes desse é: %d", somatorio(numero));
+    
     return 0;
 }
 

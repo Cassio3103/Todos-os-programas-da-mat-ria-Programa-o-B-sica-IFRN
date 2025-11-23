@@ -53,3 +53,9 @@ char[7][50];
 
 EM que [7] é o total de "strings" e [50] é a "parte da matriz" que armazenará a quantidade total de 
 char.
+
+OBSERVAÇÃO, Ao armazenar char usando o scanf, ao invés de fazer (scanf("%c", &variavel)), faça dando
+um ENTER, dessa maneira: (scanf(" %c", &variavel);). 
+
+Quando fazemos usando a primeira opção, o scanf não lê o caractere  que queremos atribuir, mas sim o 
+"\n". Ou seja, no nosso caso, ele pulava direto ao default do switch-case.
