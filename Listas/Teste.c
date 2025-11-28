@@ -18,6 +18,19 @@ int somatorio(int x){
     }
     return soma;
 }
+
+int somatorioRecursivo(int k){
+    if(k < 0){
+        printf("\nERRO! Valor negativo não possui somatório.\n");
+        return 0;
+    }
+
+    if(k == 0)
+        return 0;
+    
+
+    return k + somatorioRecursivo(k - 1);
+}
 //------------------------------------------------
 
 int main() {
@@ -37,6 +50,7 @@ int main() {
     scanf("%d", &numero);
 
     printf("\nO somatório dos n números antes desse é: %d", somatorio(numero));
+    printf("\nO somatório dos n números antes desse é (VERSÃO RECURSIVA): %d", somatorioRecursivo(numero));
     
     return 0;
 }
