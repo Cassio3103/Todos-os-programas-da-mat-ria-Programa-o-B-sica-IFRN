@@ -81,14 +81,35 @@ int somatorioRecursivo(int k){
         printf("\nERRO! Valor negativo não possui somatório.\n");
         return 0;
     }
-
     if(k == 0)
         return 0;
-    
-
     return k + somatorioRecursivo(k - 1);
 }
 //------------------------------------------------
+/*QUESTÃO 06 ------------------------------------*/
+void imparesNoVetor(int vetor[], int tamanho){
+    int contadorImpares = 0;
+    for(int i = 0; i < tamanho; i++){
+        if(vetor[i] % 2 != 0){
+            contadorImpares++;
+        }
+    }
+    printf("\nA quantidade de números ímpares no vetor é: %d\n", contadorImpares);
+}
+//------------------------------------------------
+/*QUESTÃO 07 ------------------------------------*/
+void maiorNumeroNoVetor(int vetor[], int quantidadeElem){
+    int maior = vetor[0];
+
+    for(int i = 0; i < quantidadeElem; i++){
+        if(vetor[i] > maior)
+            maior = vetor[i];
+    }
+
+    printf("\nO maior número no vetor é: %d", maior);
+}
+//------------------------------------------------
+
 int main(){
 
     SetConsoleOutputCP(CP_UTF8);
@@ -166,8 +187,58 @@ int main(){
 
     printf("\n------ FIM DA QUESTÃO 05 ------\n");
 
-    /**/
+    /*6. Escreva um programa com uma função que recebe como parâmetro de entrada um vetor de 
+    inteiros e retorna a quantidade de números ímpares do vetor.*/
 
+    int tamanhoVetor;
+
+    printf("\nQual o tamanho do vetor? ");
+    scanf("%d", &tamanhoVetor);
+
+    int vetor[tamanhoVetor];
+
+    printf("\nDigite os elementos do vetor: \n");
+    for(int i = 0; i < tamanhoVetor; i++)
+        scanf("%d", &vetor[i]);
+    
+    printf("\nO vetor é\n");
+    for(int i = 0; i < tamanhoVetor; i++)
+        printf("%d ", vetor[i]);
+
+    imparesNoVetor(vetor, tamanhoVetor);
+    
+    return 0;
+
+    printf("\n------ FIM DA QUESTÃO 06 ------\n");
+
+    /*7. Escreva um programa com uma função que recebe como parâmetro de entrada um vetor de 
+    inteiros e retorna o valor do maior número dentro do vetor.*/
+
+    int qntVetor;
+
+    printf("\nQuantos elementos terá o vetor? ");
+    scanf("%d", &qntVetor);
+
+    int v[qntVetor];
+
+    printf("\nDigite os elementos do vetor: ");
+    for(int i = 0; i < qntVetor; i++)
+        scanf("%d", &v[i]);
+    
+    printf("\nO vetor digitado é: \n");
+    for(int i = 0; i < qntVetor; i++)
+        printf("%d ", v[i]);
+    
+    maiorNumeroNoVetor(v, qntVetor);
+
+    printf("\n------ FIM DA QUESTÃO 07 ------\n");
+
+    /*8. Escreva um programa com uma função que recebe como parâmetro de entrada um vetor de 
+    inteiros e retorna o somatório dos números pares dentro desse vetor. */
+
+    // MESMA ESTRUTURA DAS ÚLTIMAS DUAS.
+
+    printf("\n------ FIM DA QUESTÃO 08 ------\n");
 
     return 0;
 }
