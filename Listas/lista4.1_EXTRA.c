@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <windows.h>
 #include <string.h>
+//Bibliotecas para questão 07
+#include <stdlib.h>
+#include <time.h>
 
 int main(){
 
@@ -152,7 +155,122 @@ int main(){
     // Posições finais
     50.0 40.0 74.7 30.9*/
 
+    double posicoes_iniciais[4] = {10.0, 50.1, 4.7, 30.9};
+    double posicoes_finais[4] = {50.0, 40.0, 74.7, 30.9};
+
+    double distancia;
+
+    for(int i = 0; i < 4; i++){
+        distancia = posicoes_finais[i] - posicoes_iniciais[i];
+
+        if(distancia > 0){
+            printf("\nO atuador se moveu para cima com a distânica de %0.2f!", distancia);
+        } else if (distancia == 0){
+            printf("\nO atuador não se mexeu!\n");
+        } else {
+            printf("\nO atuador se moveu para baixo com a distância de %0.2f!", distancia);
+        }
+    }
     
+    printf("\n------ FIM DA QUESTÃO 05 ------\n");
+
+    printf("\nA questão 6 veio repetida\n");
+
+    /*7. Contagem de Pixels Ativos em uma Imagem Binária de Sensor Óptico. Contexto: Um sensor gera uma
+    imagem binária 4x4, onde 1 = pixel ativo e 0 = inativo. Implemente um programa que faça a leitura dos
+    pixels da imagem binária e conte os pixels ativos. Após o processamento da imagem seu programa deverá
+    informar a quantidade de pixels ativos na imagem.
+    Entrada:
+
+        0 1 0 1
+        1 0 1 0
+        0 1 0 1
+        1 0 1 0
+
+    Saída:
+
+    Quantidade de pixels ativos: 8*/
+
+    srand(time(NULL));
+
+    int pixels[4][4];
+
+    int pixelsAtivos = 0;
+    for(int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++){
+            pixels[i][j] = rand() % 2;
+            if(pixels[i][j] == 1){
+                pixelsAtivos++;
+            }
+        }
+    }
+    
+    printf("\nA matriz é: \n");
+
+    for(int i = 0; i < 4; i++){
+        for(int j = 0; j < 4; j++){
+            printf("%d ", pixels[i][j]);
+        }
+        printf("\n");
+    }
+
+    printf("\nE a quantidade de pixels ativos é: %d", pixelsAtivos);
+
+    printf("\n------ FIM DA QUESTÃO 07 ------\n");
+
+    /*8. Pontos de pressão sobre uma plataforma. Contexto: Uma plataforma possui um grid de sensores dispostos
+    numa matriz 8x8 de coordenadas (x, y) os quais fazem a captura de valores de pressão quando algum objeto
+    é colocado sobre a plataforma. O seu programa deve simular uma situação de coleta dos valores dos
+    sensores da plataforma e indicar a posição do sensor (x, y) e o valor do sensor com maior valor.
+    Entrada:
+
+        8 9 8 1 0 1 0 1
+        8 8 8 0 1 1 4 1
+        0 1 2 1 0 1 0 1
+        1 0 1 0 1 3 0 1
+        0 1 0 1 1 1 0 1
+        1 0 1 0 0 1 0 1
+        0 1 0 1 1 1 0 1
+        1 0 1 0 0 1 0 1
+
+    Saída:
+
+    Posição (0, 1) valor: 9*/
+
+    /*Mais uma vez, vamos automatizar a construção da matriz utilizando srand*/
+
+    int plataforma[8][8];
+    int maior = -1;
+    int xMaior = 0, yMaior = 0;
+
+
+    for (int i = 0; i < 8; i++) {
+        for (int j = 0; j < 8; j++) {
+
+            plataforma[i][j] = rand() % 10;   
+
+            if (plataforma[i][j] > maior) {
+                maior = plataforma[i][j];
+                xMaior = i;
+                yMaior = j;
+            }
+        }
+    }
+
+    printf("\nValores capturados pelos sensores:\n");
+    for (int i = 0; i < 8; i++) {
+        for (int j = 0; j < 8; j++) {
+            printf("%d ", plataforma[i][j]);
+        }
+        printf("\n");
+    }
+
+    printf("\nMaior valor encontrado: %d na posição (%d, %d)\n", maior, xMaior, yMaior);
+
+    printf("\n------ FIM DA QUESTÃO 08 ------\n");
+
+    
+
 
 
     return 0;

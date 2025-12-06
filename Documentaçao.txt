@@ -59,3 +59,11 @@ um ENTER, dessa maneira: (scanf(" %c", &variavel);).
 
 Quando fazemos usando a primeira opção, o scanf não lê o caractere  que queremos atribuir, mas sim o 
 "\n". Ou seja, no nosso caso, ele pulava direto ao default do switch-case.
+
+
+
+
+//---------------------------------------------------
+//*  QUANDO USAR SÍMBOLO DE REFERÊNCIAÇÃO (&):
+
+Somente quando precisarmos do endereço de uma variável.
