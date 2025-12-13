@@ -207,7 +207,6 @@ int main(){
 
     imparesNoVetor(vetor, tamanhoVetor);
     
-    return 0;
 
     printf("\n------ FIM DA QUESTÃO 06 ------\n");
 
